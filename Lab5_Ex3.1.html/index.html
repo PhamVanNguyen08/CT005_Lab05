@@ -3,104 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Infographic về lợi ích của công nghệ số trong học tập và video minh họa.">
-  <title>Công nghệ số trong học tập</title>
+  <meta name="description" content="Hồ sơ cá nhân và các sản phẩm học tập về công nghệ số trong học tập.">
+  <title>Hồ sơ cá nhân | Sản phẩm học tập</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      color-scheme: dark;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #07152f;
-      color: #f5f8ff;
+      font-family: "DM Sans", sans-serif;
+      color: #1d302c;
+      background: #f5f7f2;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      --ink: #1d302c;
+      --muted: #63716b;
+      --green: #286c57;
+      --coral: #ed7658;
+      --line: #dce3dc;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       min-width: 320px;
       margin: 0;
-      background:
-        radial-gradient(ellipse at 15% 10%, rgba(24, 105, 221, 0.28), transparent 38rem),
-        #07152f;
+    }
+
+    a {
+      color: inherit;
     }
 
     .page {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1160px, calc(100% - 48px));
       margin: 0 auto;
-      padding: 48px 0 64px;
     }
 
-    .intro {
-      margin-bottom: 32px;
-      text-align: center;
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .eyebrow {
-      margin: 0 0 10px;
-      color: #6bdcff;
+    .brand {
+      color: var(--green);
+      font-family: Manrope, sans-serif;
       font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .topbar nav {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .topbar nav a {
+      text-decoration: none;
+    }
+
+    .topbar nav a:hover,
+    .topbar nav a:focus-visible {
+      color: var(--green);
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 56px;
+      padding: 72px 0 68px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow,
+    .section-kicker {
+      margin: 0 0 14px;
+      color: var(--green);
+      font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.1;
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
     }
 
-    .intro p:last-child {
-      max-width: 650px;
-      margin: 14px auto 0;
-      color: #c1cde4;
+    h1,
+    h2,
+    h3 {
+      font-family: Manrope, sans-serif;
+    }
+
+    h1 {
+      max-width: 620px;
+      margin-bottom: 18px;
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 1.06;
+    }
+
+    h1 span {
+      color: var(--coral);
+    }
+
+    .bio {
+      max-width: 590px;
+      margin-bottom: 26px;
+      color: var(--muted);
       font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .profile-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 4px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .profile-link:hover {
+      transform: translateY(-2px);
+      background: #1e5846;
+    }
+
+    .profile-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 0;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .profile-details div {
+      min-height: 100px;
+      padding: 20px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .profile-details dt {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .profile-details dd {
+      margin: 0;
+      font-family: Manrope, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .work {
+      padding: 62px 0 76px;
+    }
+
+    .work-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .work-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+
+    .work-heading > p {
+      max-width: 360px;
+      margin-bottom: 3px;
+      color: var(--muted);
       line-height: 1.6;
     }
 
-    .content {
+    .products {
       display: grid;
-      grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.4fr);
-      align-items: start;
-      gap: 28px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    .card {
+    .product {
+      min-width: 0;
       overflow: hidden;
-      border: 1px solid rgba(144, 183, 255, 0.22);
-      border-radius: 20px;
-      background: rgba(14, 34, 70, 0.82);
-      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
     }
 
-    .card-header {
-      padding: 22px 24px 16px;
+    .product-info {
+      min-height: 116px;
+      padding: 18px 18px 14px;
     }
 
-    h2 {
-      margin: 0;
-      font-size: 1.25rem;
+    .product-type {
+      margin-bottom: 7px;
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .card-header p {
-      margin: 8px 0 0;
-      color: #c1cde4;
+    h3 {
+      margin-bottom: 5px;
+      font-size: 1.05rem;
+    }
+
+    .product-info p:last-child {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
       line-height: 1.5;
     }
 
-    .infographic {
+    .pdf-frame {
       display: block;
       width: 100%;
-      height: auto;
+      height: 340px;
+      border: 0;
+      border-top: 1px solid var(--line);
+      background: #edf1ee;
+    }
+
+    .poster-frame {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 340px;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
       background: #102553;
+    }
+
+    .poster-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .video-frame {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      background: #020817;
+      border-top: 1px solid var(--line);
+      background: #10211e;
     }
 
     .video-frame iframe {
@@ -111,81 +279,204 @@
       border: 0;
     }
 
-    .video-link {
+    .product-action {
       display: inline-block;
-      margin: 0 24px 24px;
-      color: #7bdcff;
+      margin: 14px 18px 18px;
+      color: var(--green);
+      font-size: 0.88rem;
       font-weight: 700;
-      line-height: 1.5;
       text-decoration-thickness: 1px;
       text-underline-offset: 4px;
     }
 
-    .video-link:hover {
-      color: #fff;
+    .product-action:hover {
+      color: #174735;
     }
 
-    .video-link:focus-visible {
-      outline: 2px solid #7bdcff;
-      outline-offset: 4px;
+    footer {
+      padding: 20px 0 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
     }
 
-    @media (max-width: 760px) {
-      .page {
-        width: min(560px, calc(100% - 28px));
-        padding-top: 32px;
+    @media (max-width: 850px) {
+      .profile {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 54px 0;
       }
 
-      .content {
+      .products {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .product:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .product:last-child .video-frame {
+        aspect-ratio: 16 / 7;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .page {
+        width: min(100% - 32px, 440px);
+      }
+
+      .topbar {
+        min-height: 64px;
+      }
+
+      .topbar nav {
+        gap: 14px;
+        font-size: 0.82rem;
+      }
+
+      .profile {
+        padding: 44px 0;
+      }
+
+      .profile-details div {
+        min-height: 88px;
+        padding: 15px;
+      }
+
+      .work {
+        padding: 46px 0 54px;
+      }
+
+      .work-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .products {
         grid-template-columns: 1fr;
-        gap: 20px;
+      }
+
+      .product:last-child {
+        grid-column: auto;
+      }
+
+      .product:last-child .video-frame {
+        aspect-ratio: 16 / 9;
+      }
+
+      .pdf-frame,
+      .poster-frame {
+        height: 420px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <header class="intro">
-      <p class="eyebrow">Infographic &amp; video</p>
-      <h1>Công nghệ số trong học tập</h1>
-      <p>Khám phá những lợi ích của công nghệ số: tiếp cận tri thức linh hoạt, cá nhân hóa lộ trình và học tập hiệu quả hơn.</p>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="#trang-chu">HỒ SƠ HỌC TẬP</a>
+      <nav aria-label="Điều hướng chính">
+        <a href="#trang-chu">Giới thiệu</a>
+        <a href="#san-pham">Sản phẩm</a>
+      </nav>
     </header>
 
-    <section class="content" aria-label="Infographic và video về công nghệ số trong học tập">
-      <article class="card">
-        <div class="card-header">
-          <h2>Infographic</h2>
-          <p>5 lợi ích nổi bật của công nghệ số trong học tập.</p>
+    <main>
+      <section class="profile" id="trang-chu" aria-labelledby="profile-title">
+        <div>
+          <p class="eyebrow">Xin chào, mình là</p>
+          <h1 id="profile-title">Phạm Vân <span>Nguyên.</span></h1>
+          <p class="bio">Mình yêu thích khám phá cách công nghệ mở rộng cơ hội học tập. Đây là góc nhỏ giới thiệu bản thân và những sản phẩm mình đã thực hiện.</p>
+          <a class="profile-link" href="#san-pham">Xem sản phẩm ↓</a>
         </div>
-        <img
-          class="infographic"
-          src="Lab05_Ex2.1.png"
-          alt="Infographic về 5 lợi ích của công nghệ số trong học tập: tiếp cận tri thức mọi lúc mọi nơi, cá nhân hóa lộ trình, tiết kiệm thời gian, tăng cường tương tác và đánh giá chính xác."
-        >
-      </article>
+        <dl class="profile-details" aria-label="Thông tin cá nhân">
+          <div>
+            <dt>Họ và tên</dt>
+            <dd>Phạm Vân Nguyên</dd>
+          </div>
+          <div>
+            <dt>Lớp / ngành</dt>
+            <dd>DI26D2A2</dd>
+          </div>
+          <div>
+            <dt>Chủ đề quan tâm</dt>
+            <dd>Công nghệ số</dd>
+          </div>
+          <div>
+            <dt>Định hướng</dt>
+            <dd>Học tập sáng tạo</dd>
+          </div>
+        </dl>
+      </section>
 
-      <article class="card">
-        <div class="card-header">
-          <h2>Video tìm hiểu thêm</h2>
-          <p>Phát video trực tiếp ngay trên trang hoặc mở video trên YouTube.</p>
+      <section class="work" id="san-pham" aria-labelledby="work-title">
+        <div class="work-heading">
+          <div>
+            <p class="section-kicker">Bài tập &amp; sáng tạo</p>
+            <h2 id="work-title">Sản phẩm của mình</h2>
+          </div>
+          <p>Ba định dạng, cùng một chủ đề: công nghệ số trong học tập.</p>
         </div>
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/lOb-1i8MWAs"
-            title="Video về công nghệ số trong học tập trên YouTube"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+
+        <div class="products">
+          <article class="product">
+            <div class="product-info">
+              <p class="product-type">Tài liệu · PDF</p>
+              <h3>Tài liệu học tập</h3>
+              <p>Sản phẩm học tập được trình bày dưới dạng PDF.</p>
+            </div>
+            <iframe class="pdf-frame" src="../Lab05_Ex1.2.pdf" title="Xem trước tài liệu PDF"></iframe>
+            <a class="product-action" href="../Lab05_Ex1.2.pdf" target="_blank" rel="noopener noreferrer">Mở tài liệu PDF ↗</a>
+          </article>
+
+          <article class="product">
+            <div class="product-info">
+              <p class="product-type">Thiết kế · PNG</p>
+              <h3>Công nghệ số trong học tập</h3>
+              <p>Infographic về 5 lợi ích của công nghệ số trong học tập.</p>
+            </div>
+            <a class="poster-frame" href="Lab05_Ex2.1.png" target="_blank" rel="noopener noreferrer" aria-label="Mở infographic ở kích thước đầy đủ">
+              <img src="Lab05_Ex2.1.png" alt="Infographic về 5 lợi ích của công nghệ số trong học tập: tiếp cận tri thức mọi lúc mọi nơi, cá nhân hóa lộ trình, tiết kiệm thời gian, tăng cường tương tác và đánh giá chính xác.">
+            </a>
+            <a class="product-action" href="Lab05_Ex2.1.png" download>Tải infographic PNG ↓</a>
+          </article>
+
+          <article class="product">
+            <div class="product-info">
+              <p class="product-type">Video · YouTube</p>
+              <h3>Học tập trong thời đại số</h3>
+              <p>Video tìm hiểu thêm về công nghệ số trong học tập.</p>
+            </div>
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/lOb-1i8MWAs"
+                title="Video về công nghệ số trong học tập trên YouTube"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <a class="product-action" href="https://youtu.be/lOb-1i8MWAs" target="_blank" rel="noopener noreferrer">Xem trên YouTube ↗</a>
+          </article>
         </div>
-        <a
-          class="video-link"
-          href="https://youtu.be/lOb-1i8MWAs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Mở video trên YouTube ↗</a>
-      </article>
-    </section>
-  </main>
+      </section>
+    </main>
+
+    <footer>Hồ sơ cá nhân · Sản phẩm học tập</footer>
+  </div>
 </body>
 </html>
